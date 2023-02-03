@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.1 (Python 3.10.4 on darwin)" generated="20230202 23:16:28.314" rpa="false" schemaversion="3">
+<suite id="s1" name="Test Case 1" source="/Users/administrador/Desktop/Curso/RobotFramework/Teste/TestCases/test_case_1.robot">
+<test id="s1-t1" name="Validar exibição de artigos após pesquisa" line="20">
+<kw name="Abrir pagina web">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230202 23:16:28.616" level="INFO">Opening browser 'Chrome' to base url 'https://blogdoagi.com.br/'.</msg>
+<status status="PASS" starttime="20230202 23:16:28.615" endtime="20230202 23:16:34.028"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>Blog do Agi</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230202 23:16:34.036" level="INFO">Page title is 'Blog do Agi'.</msg>
+<status status="PASS" starttime="20230202 23:16:34.029" endtime="20230202 23:16:34.036"/>
+</kw>
+<status status="PASS" starttime="20230202 23:16:28.615" endtime="20230202 23:16:34.037"/>
+</kw>
+<kw name="Adicionar pesquisa no campo">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BUTTON_SEARCH}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230202 23:16:34.039" level="INFO">Clicking element '//button[@id='search-open']'.</msg>
+<status status="PASS" starttime="20230202 23:16:34.038" endtime="20230202 23:16:34.183"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BUTTON_SEARCH_MID}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230202 23:16:34.183" level="INFO">Clicking element '(//input[contains(@type,'search')])[1]'.</msg>
+<status status="PASS" starttime="20230202 23:16:34.183" endtime="20230202 23:16:34.249"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${BUTTON_SEARCH_MID}</arg>
+<arg>${TEXT}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230202 23:16:34.250" level="INFO">Typing text '"MUTATION TEST"' into text field '(//input[contains(@type,'search')])[1]'.</msg>
+<status status="PASS" starttime="20230202 23:16:34.249" endtime="20230202 23:16:34.527"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BUTTON_SEARCH_CEN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230202 23:16:34.529" level="INFO">Clicking element '(//input[contains(@type,'submit')])[1]'.</msg>
+<status status="PASS" starttime="20230202 23:16:34.527" endtime="20230202 23:16:35.560"/>
+</kw>
+<status status="PASS" starttime="20230202 23:16:34.037" endtime="20230202 23:16:35.560"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230202 23:16:35.560" endtime="20230202 23:16:35.743"/>
+</kw>
+<status status="PASS" starttime="20230202 23:16:28.614" endtime="20230202 23:16:35.743"/>
+</test>
+<doc>Simple example using SeleniumLibrary.</doc>
+<status status="PASS" starttime="20230202 23:16:28.315" endtime="20230202 23:16:35.744"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test Case 1">Test Case 1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
