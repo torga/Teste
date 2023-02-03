@@ -1,68 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.1 (Python 3.10.4 on darwin)" generated="20230202 23:16:28.314" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.1 (Python 3.10.4 on darwin)" generated="20230202 23:54:52.125" rpa="false" schemaversion="3">
 <suite id="s1" name="Test Case 1" source="/Users/administrador/Desktop/Curso/RobotFramework/Teste/TestCases/test_case_1.robot">
-<test id="s1-t1" name="Validar exibição de artigos após pesquisa" line="20">
+<test id="s1-t1" name="Validar mensagem de artigos sem temas no blog" line="21">
 <kw name="Abrir pagina web">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${LOGIN URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230202 23:16:28.616" level="INFO">Opening browser 'Chrome' to base url 'https://blogdoagi.com.br/'.</msg>
-<status status="PASS" starttime="20230202 23:16:28.615" endtime="20230202 23:16:34.028"/>
+<msg timestamp="20230202 23:54:52.520" level="INFO">Opening browser 'Chrome' to base url 'https://blogdoagi.com.br/'.</msg>
+<status status="PASS" starttime="20230202 23:54:52.519" endtime="20230202 23:54:58.354"/>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <arg>Blog do Agi</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20230202 23:16:34.036" level="INFO">Page title is 'Blog do Agi'.</msg>
-<status status="PASS" starttime="20230202 23:16:34.029" endtime="20230202 23:16:34.036"/>
+<msg timestamp="20230202 23:54:58.365" level="INFO">Page title is 'Blog do Agi'.</msg>
+<status status="PASS" starttime="20230202 23:54:58.354" endtime="20230202 23:54:58.366"/>
 </kw>
-<status status="PASS" starttime="20230202 23:16:28.615" endtime="20230202 23:16:34.037"/>
+<status status="PASS" starttime="20230202 23:54:52.519" endtime="20230202 23:54:58.366"/>
 </kw>
 <kw name="Adicionar pesquisa no campo">
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${BUTTON_SEARCH}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230202 23:16:34.039" level="INFO">Clicking element '//button[@id='search-open']'.</msg>
-<status status="PASS" starttime="20230202 23:16:34.038" endtime="20230202 23:16:34.183"/>
+<msg timestamp="20230202 23:54:58.369" level="INFO">Clicking element '//button[@id='search-open']'.</msg>
+<status status="PASS" starttime="20230202 23:54:58.367" endtime="20230202 23:54:58.502"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${BUTTON_SEARCH_MID}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230202 23:16:34.183" level="INFO">Clicking element '(//input[contains(@type,'search')])[1]'.</msg>
-<status status="PASS" starttime="20230202 23:16:34.183" endtime="20230202 23:16:34.249"/>
+<msg timestamp="20230202 23:54:58.503" level="INFO">Clicking element '(//input[contains(@type,'search')])[1]'.</msg>
+<msg timestamp="20230202 23:54:59.737" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20230202 23:54:59.737" level="FAIL">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=109.0.5414.119)
+Stacktrace:
+0   chromedriver                        0x0000000105425fa8 chromedriver + 4886440
+1   chromedriver                        0x00000001053a3643 chromedriver + 4351555
+2   chromedriver                        0x0000000104ff199d chromedriver + 477597
+3   chromedriver                        0x0000000105037f51 chromedriver + 765777
+4   chromedriver                        0x0000000105028d73 chromedriver + 703859
+5   chromedriver                        0x000000010505c5d2 chromedriver + 914898
+6   chromedriver                        0x00000001050283dd chromedriver + 701405
+7   chromedriver                        0x000000010505c78e chromedriver + 915342
+8   chromedriver                        0x00000001050775fe chromedriver + 1025534
+9   chromedriver                        0x000000010505c3a3 chromedriver + 914339
+10  chromedriver                        0x000000010502657f chromedriver + 693631
+11  chromedriver                        0x0000000105027b1e chromedriver + 699166
+12  chromedriver                        0x00000001053f2b9e chromedriver + 4676510
+13  chromedriver                        0x00000001053f791e chromedriver + 4696350
+14  chromedriver                        0x00000001053ff19f chromedriver + 4727199
+15  chromedriver                        0x00000001053f881a chromedriver + 4700186
+16  chromedriver                        0x00000001053cba62 chromedriver + 4516450
+17  chromedriver                        0x00000001054178c8 chromedriver + 4827336
+18  chromedriver                        0x0000000105417a45 chromedriver + 4827717
+19  chromedriver                        0x000000010542d7ef chromedriver + 4917231
+20  libsystem_pthread.dylib             0x00007ff80bffb259 _pthread_start + 125
+21  libsystem_pthread.dylib             0x00007ff80bff6c7b thread_start + 15
+</msg>
+<status status="FAIL" starttime="20230202 23:54:58.502" endtime="20230202 23:54:59.748"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${BUTTON_SEARCH_MID}</arg>
 <arg>${TEXT}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230202 23:16:34.250" level="INFO">Typing text '"MUTATION TEST"' into text field '(//input[contains(@type,'search')])[1]'.</msg>
-<status status="PASS" starttime="20230202 23:16:34.249" endtime="20230202 23:16:34.527"/>
+<status status="NOT RUN" starttime="20230202 23:54:59.748" endtime="20230202 23:54:59.748"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${BUTTON_SEARCH_CEN}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230202 23:16:34.529" level="INFO">Clicking element '(//input[contains(@type,'submit')])[1]'.</msg>
-<status status="PASS" starttime="20230202 23:16:34.527" endtime="20230202 23:16:35.560"/>
+<status status="NOT RUN" starttime="20230202 23:54:59.748" endtime="20230202 23:54:59.748"/>
 </kw>
-<status status="PASS" starttime="20230202 23:16:34.037" endtime="20230202 23:16:35.560"/>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${RESULT}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" starttime="20230202 23:54:59.748" endtime="20230202 23:54:59.748"/>
+</kw>
+<status status="FAIL" starttime="20230202 23:54:58.367" endtime="20230202 23:54:59.748"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230202 23:16:35.560" endtime="20230202 23:16:35.743"/>
+<status status="PASS" starttime="20230202 23:54:59.749" endtime="20230202 23:54:59.944"/>
 </kw>
-<status status="PASS" starttime="20230202 23:16:28.614" endtime="20230202 23:16:35.743"/>
+<status status="FAIL" starttime="20230202 23:54:52.518" endtime="20230202 23:54:59.945">ElementNotInteractableException: Message: element not interactable
+  (Session info: chrome=109.0.5414.119)
+Stacktrace:
+0   chromedriver                        0x0000000105425fa8 chromedriver + 4886440
+1   chromedriver                        0x00000001053a3643 chromedriver + 4351555
+2   chromedriver                        0x0000000104ff199d chromedriver + 477597
+3   chromedriver                        0x0000000105037f51 chromedriver + 765777
+4   chromedriver                        0x0000000105028d73 chromedriver + 703859
+5   chromedriver                        0x000000010505c5d2 chromedriver + 914898
+6   chromedriver                        0x00000001050283dd chromedriver + 701405
+7   chromedriver                        0x000000010505c78e chromedriver + 915342
+8   chromedriver                        0x00000001050775fe chromedriver + 1...
+    [ Message content over the limit has been removed. ]
+...hromedriver                        0x0000000105027b1e chromedriver + 699166
+12  chromedriver                        0x00000001053f2b9e chromedriver + 4676510
+13  chromedriver                        0x00000001053f791e chromedriver + 4696350
+14  chromedriver                        0x00000001053ff19f chromedriver + 4727199
+15  chromedriver                        0x00000001053f881a chromedriver + 4700186
+16  chromedriver                        0x00000001053cba62 chromedriver + 4516450
+17  chromedriver                        0x00000001054178c8 chromedriver + 4827336
+18  chromedriver                        0x0000000105417a45 chromedriver + 4827717
+19  chromedriver                        0x000000010542d7ef chromedriver + 4917231
+20  libsystem_pthread.dylib             0x00007ff80bffb259 _pthread_start + 125
+21  libsystem_pthread.dylib             0x00007ff80bff6c7b thread_start + 15</status>
 </test>
 <doc>Simple example using SeleniumLibrary.</doc>
-<status status="PASS" starttime="20230202 23:16:28.315" endtime="20230202 23:16:35.744"/>
+<status status="FAIL" starttime="20230202 23:54:52.128" endtime="20230202 23:54:59.950"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Test Case 1">Test Case 1</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Test Case 1">Test Case 1</stat>
 </suite>
 </statistics>
 <errors>
